@@ -39,7 +39,7 @@ mem=$(free | awk '/Mem:/ {printf "%.0f", $3/$2 * 100.0}')
 mem="${mem}% 󰘚"
 
 # 5. Disk
-disk=$(df -h / | awk 'NR==2 {print $5}' | tr -d '%')
+disk=$(df --output=pcent / | tail -n 1 | tr -d ' %')
 disk="${disk}% 󰋊"
 
 # 6. Uptime
