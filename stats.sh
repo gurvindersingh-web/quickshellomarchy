@@ -1,9 +1,33 @@
 #!/bin/bash
 # Fetch system stats for Omarchy waybar-like widget
 
-# 1. Temperature
-temp=$(sensors 2>/dev/null | grep -m 1 "Package id 0:" | awk '{print $4}' | tr -d '+')
-[ -z "$temp" ] && temp=$(sensors 2>/dev/null | grep -m 1 "temp1:" | awk '{print $2}' | tr -d '+')
+temp=""
+if command -v sensors >/dev/null 2>&1; then
+    temp=$(sensors 2>/dev/null | grep -m 1 -E "Package id 0:|Tctl:|Tdie:|temp1:" | grep -o -E "[0-9]+\.[0-9]°[CF]" | head -n 1)
+fi
+
+if [ -z "$temp" ]; then
+    for tz in /sys/class/thermal/thermal_zone*; do
+        if [ -f "$tz/type" ]; then
+            tz_type=$(cat "$tz/type" 2>/dev/null)
+            if [ "$tz_type" = "x86_pkg_temp" ] || [ "$tz_type" = "TCPU" ]; then
+                raw=$(cat "$tz/temp" 2>/dev/null)
+                if [ -n "$raw" ]; then
+                    temp="$((raw / 1000)).0°C"
+                    break
+                fi
+            fi
+        fi
+    done
+fi
+
+if [ -z "$temp" ] && [ -f "/sys/class/thermal/thermal_zone0/temp" ]; then
+    raw=$(cat /sys/class/thermal/thermal_zone0/temp 2>/dev/null)
+    if [ -n "$raw" ]; then
+        temp="$((raw / 1000)).0°C"
+    fi
+fi
+
 [ -z "$temp" ] && temp="N/A"
 temp="${temp} "
 
