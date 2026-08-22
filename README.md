@@ -6,6 +6,9 @@ This widget provides at-a-glance system metrics directly in your Omarchy bar, co
 
 ## Features
 
+<img width="364" height="28" alt="image" src="https://github.com/user-attachments/assets/0acfbc27-50f1-4704-b072-dd10d0748971" />
+
+
 -  **Temperature**: Shows CPU package temperature (`sensors`). Click to view processes.
 -  **Power Profile**: Shows current power profile (`powerprofilesctl`). Click to toggle profiles.
 - 󰍛 **CPU**: Shows CPU usage percentage. Left click for `btop`, right click for a new terminal.
