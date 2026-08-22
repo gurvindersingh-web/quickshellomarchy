@@ -19,11 +19,18 @@ This widget provides at-a-glance system metrics directly in your Omarchy bar, co
 The recommended way to install this plugin is via the Omarchy CLI:
 
 ```bash
-omarchy plugin install gurvindersingh-web.system-stats
+omarchy plugin add https://github.com/gurvindersingh-web/quickshellomarchy.git
 ```
 
 *For manual installation: Download or clone this repository and place the folder in `~/.config/omarchy/plugins/gurvindersingh-web.system-stats`, then ensure `stats.sh` is executable (`chmod +x stats.sh`).*
 
+## Removal
+
+To remove the plugin, use the Omarchy CLI:
+
+```bash
+omarchy plugin remove gurvindersingh-web.system-stats
+```
 
 ## Features
 
@@ -35,7 +42,6 @@ omarchy plugin install gurvindersingh-web.system-stats
 - 󰔚 **Uptime**: Shows system uptime cleanly formatted.
 
 Each module automatically color-codes based on state (e.g., performance mode vs balanced mode), adding a cohesive and intuitive aesthetic to your desktop.
-
 
 ## Configuration
 
