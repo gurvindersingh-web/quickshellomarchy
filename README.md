@@ -27,18 +27,13 @@ Each module automatically color-codes based on state (e.g., performance mode vs 
 
 ## Installation
 
-### Method 1: Clone from GitHub
-Omarchy plugins can be installed simply by cloning the repository into your `~/.config/omarchy/plugins/` directory.
+The recommended way to install this plugin is via the Omarchy CLI:
 
-```bash
-git clone https://github.com/gurvindersingh-web/quickshellomarchy.git ~/.config/omarchy/plugins/gurvindersingh-web.system-stats
-chmod +x ~/.config/omarchy/plugins/gurvindersingh-web.system-stats/stats.sh
-```
-
-### Method 2: Omarchy CLI (Once Published)
 ```bash
 omarchy plugin install gurvindersingh-web.system-stats
 ```
+
+*For manual installation: Download or clone this repository and place the folder in `~/.config/omarchy/plugins/gurvindersingh-web.system-stats`, then ensure `stats.sh` is executable (`chmod +x stats.sh`).*
 
 ## Configuration
 
