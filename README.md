@@ -4,10 +4,17 @@ A clean, responsive, Waybar-style system statistics widget for the [Omarchy](htt
 
 This widget provides at-a-glance system metrics directly in your Omarchy bar, complete with beautiful icons, color-coded health indicators, and interactive actions (such as opening `btop` for deeper inspection).
 
+## Preview
+
+<div align="center">
+  <img alt="System Stats Widget Image Preview" src="https://github.com/user-attachments/assets/0acfbc27-50f1-4704-b072-dd10d0748971" width="800" />
+</div>
+<br>
+<div align="center">
+  <video src="https://github.com/user-attachments/assets/da213999-1a47-48d5-80b3-a005aacffdf9" width="800" controls="controls" autoplay loop muted></video>
+</div>
+
 ## Features
-
-<img width="364" height="28" alt="image" src="https://github.com/user-attachments/assets/0acfbc27-50f1-4704-b072-dd10d0748971" />
-
 
 -  **Temperature**: Shows CPU package temperature (`sensors`). Click to view processes.
 -  **Power Profile**: Shows current power profile (`powerprofilesctl`). Click to toggle profiles.
@@ -15,11 +22,6 @@ This widget provides at-a-glance system metrics directly in your Omarchy bar, co
 - 󰘚 **Memory**: Shows RAM usage percentage.
 - 󰋊 **Disk**: Shows root filesystem (`/`) usage.
 - 󰔚 **Uptime**: Shows system uptime cleanly formatted.
-  
-
-https://github.com/user-attachments/assets/da213999-1a47-48d5-80b3-a005aacffdf9
-
-
 
 Each module automatically color-codes based on state (e.g., performance mode vs balanced mode), adding a cohesive and intuitive aesthetic to your desktop.
 
