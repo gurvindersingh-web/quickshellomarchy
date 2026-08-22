@@ -15,6 +15,11 @@ This widget provides at-a-glance system metrics directly in your Omarchy bar, co
 - 󰘚 **Memory**: Shows RAM usage percentage.
 - 󰋊 **Disk**: Shows root filesystem (`/`) usage.
 - 󰔚 **Uptime**: Shows system uptime cleanly formatted.
+  
+
+https://github.com/user-attachments/assets/da213999-1a47-48d5-80b3-a005aacffdf9
+
+
 
 Each module automatically color-codes based on state (e.g., performance mode vs balanced mode), adding a cohesive and intuitive aesthetic to your desktop.
 
