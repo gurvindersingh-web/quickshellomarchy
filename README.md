@@ -11,7 +11,7 @@ This widget provides at-a-glance system metrics directly in your Omarchy bar, co
 </div>
 <br>
 <div align="center">
-  <video src="https://github.com/user-attachments/assets/da213999-1a47-48d5-80b3-a005aacffdf9" width="800" controls="controls" autoplay loop muted></video>
+  <video src="https://github.com/user-attachments/assets/da213999-1a47-48d5-80b3-a005aacffdf9" width="800" title="System Stats Preview" autoplay loop muted playsinline></video>
 </div>
 
 ## Features
