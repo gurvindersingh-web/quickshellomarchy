@@ -29,12 +29,13 @@ BarWidget {
       if (exitCode === 0) {
         try {
           let data = JSON.parse(monOut.text.trim());
-          root.tempText = data.temp;
-          root.powerText = data.power;
-          root.cpuText = data.cpu;
-          root.memText = data.mem;
-          root.diskText = data.disk;
-          root.uptimeText = data.uptime;
+          const boundStr = (v) => typeof v === 'string' ? v.substring(0, 64) : "";
+          root.tempText = boundStr(data.temp);
+          root.powerText = boundStr(data.power);
+          root.cpuText = boundStr(data.cpu);
+          root.memText = boundStr(data.mem);
+          root.diskText = boundStr(data.disk);
+          root.uptimeText = boundStr(data.uptime);
         } catch(e) { }
       }
     }
@@ -75,6 +76,7 @@ BarWidget {
       id: label
       anchors.centerIn: parent
       text: parent.text
+      textFormat: Text.PlainText
       color: ma.containsMouse ? parent.accentColor : (root.bar ? root.bar.barForeground : Color.foreground)
       font.family: "JetBrainsMono Nerd Font"
       font.pixelSize: Style.font.bodySmall

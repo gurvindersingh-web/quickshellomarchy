@@ -47,13 +47,11 @@ up=$(awk '{d=int($1/86400); h=int(($1%86400)/3600); m=int(($1%3600)/60); if(d>0)
 up="${up} 󰔚"
 
 # JSON output
-cat <<JSON
-{
-  "temp": "$temp",
-  "power": "$power",
-  "cpu": "$cpu",
-  "mem": "$mem",
-  "disk": "$disk",
-  "uptime": "$up"
-}
-JSON
+jq -n -c \
+  --arg temp "$temp" \
+  --arg power "$power" \
+  --arg cpu "$cpu" \
+  --arg mem "$mem" \
+  --arg disk "$disk" \
+  --arg uptime "$up" \
+  '{temp: $temp, power: $power, cpu: $cpu, mem: $mem, disk: $disk, uptime: $uptime}'
