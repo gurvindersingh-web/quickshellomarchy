@@ -14,6 +14,17 @@ This widget provides at-a-glance system metrics directly in your Omarchy bar, co
   <video src="https://github.com/user-attachments/assets/da213999-1a47-48d5-80b3-a005aacffdf9" width="800" title="System Stats Preview" autoplay loop muted playsinline></video>
 </div>
 
+## Installation
+
+The recommended way to install this plugin is via the Omarchy CLI:
+
+```bash
+omarchy plugin install gurvindersingh-web.system-stats
+```
+
+*For manual installation: Download or clone this repository and place the folder in `~/.config/omarchy/plugins/gurvindersingh-web.system-stats`, then ensure `stats.sh` is executable (`chmod +x stats.sh`).*
+
+
 ## Features
 
 -  **Temperature**: Shows CPU package temperature (`sensors`). Click to view processes.
@@ -25,15 +36,6 @@ This widget provides at-a-glance system metrics directly in your Omarchy bar, co
 
 Each module automatically color-codes based on state (e.g., performance mode vs balanced mode), adding a cohesive and intuitive aesthetic to your desktop.
 
-## Installation
-
-The recommended way to install this plugin is via the Omarchy CLI:
-
-```bash
-omarchy plugin install gurvindersingh-web.system-stats
-```
-
-*For manual installation: Download or clone this repository and place the folder in `~/.config/omarchy/plugins/gurvindersingh-web.system-stats`, then ensure `stats.sh` is executable (`chmod +x stats.sh`).*
 
 ## Configuration
 
