@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
-  "id": "system-stats",
+  "id": "gurvindersingh-web.system-stats",
   "name": "System Stats (Waybar Style)",
   "version": "1.0.0",
-  "author": "Open Source Contributor",
+  "author": "Gurvinder Singh",
   "description": "Waybar-like system statistics for the Omarchy bar",
   "kinds": [
     "bar-widget"

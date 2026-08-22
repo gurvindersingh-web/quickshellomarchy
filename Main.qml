@@ -6,7 +6,7 @@ import qs.Ui
 
 BarWidget {
   id: root
-  moduleName: "system-stats"
+  moduleName: "gurvindersingh-web.system-stats"
 
   property string tempText: "..."
   property string powerText: "..."
@@ -20,7 +20,7 @@ BarWidget {
 
   Process {
     id: monProc
-    command: ["bash", "-c", "$HOME/.config/omarchy/plugins/system-stats/stats.sh"]
+    command: ["bash", Qt.resolvedUrl("stats.sh").toString().replace("file://", "")]
     stdout: StdioCollector {
       id: monOut
       waitForEnd: true

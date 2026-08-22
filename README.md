@@ -1,48 +1,70 @@
 # Omarchy System Stats Widget
 
-A clean, Waybar-style system statistics widget for the Omarchy Linux desktop shell. 
+A clean, responsive, Waybar-style system statistics widget for the [Omarchy](https://github.com/omarchy/omarchy) Linux desktop shell. 
+
+This widget provides at-a-glance system metrics directly in your Omarchy bar, complete with beautiful icons, color-coded health indicators, and interactive actions (such as opening `btop` for deeper inspection).
 
 ## Features
-- **Temperature**: Shows CPU package temperature (`sensors`).
-- **Power Profile**: Shows current power profile (`powerprofilesctl`).
-- **CPU**: Shows CPU usage percentage.
-- **Memory**: Shows RAM usage percentage.
-- **Disk**: Shows root filesystem (`/`) usage.
-- **Uptime**: Shows system uptime.
+
+-  **Temperature**: Shows CPU package temperature (`sensors`). Click to view processes.
+-  **Power Profile**: Shows current power profile (`powerprofilesctl`). Click to toggle profiles.
+- 󰍛 **CPU**: Shows CPU usage percentage. Left click for `btop`, right click for a new terminal.
+- 󰘚 **Memory**: Shows RAM usage percentage.
+- 󰋊 **Disk**: Shows root filesystem (`/`) usage.
+- 󰔚 **Uptime**: Shows system uptime cleanly formatted.
+
+Each module automatically color-codes based on state (e.g., performance mode vs balanced mode), adding a cohesive and intuitive aesthetic to your desktop.
 
 ## Installation
 
-Omarchy plugins can be installed simply by copying the folder into your `~/.config/omarchy/plugins/` directory.
+### Method 1: Clone from GitHub
+Omarchy plugins can be installed simply by cloning the repository into your `~/.config/omarchy/plugins/` directory.
 
 ```bash
-# Copy to plugins directory
-cp -r . ~/.config/omarchy/plugins/system-stats
+git clone https://github.com/gurvindersingh-web/quickshellomarchy.git ~/.config/omarchy/plugins/gurvindersingh-web.system-stats
+chmod +x ~/.config/omarchy/plugins/gurvindersingh-web.system-stats/stats.sh
+```
 
-# Ensure the script is executable
-chmod +x ~/.config/omarchy/plugins/system-stats/stats.sh
+### Method 2: Omarchy CLI (Once Published)
+```bash
+omarchy plugin install gurvindersingh-web.system-stats
 ```
 
 ## Configuration
 
-To add the widget to your bar, edit your `~/.config/omarchy/shell.json` and add `{"id": "system-stats"}` to the `right` section (or wherever you prefer).
+To add the widget to your bar, edit your `~/.config/omarchy/shell.json` and add `{"id": "gurvindersingh-web.system-stats"}` to the `right` section (or wherever you prefer to place it).
 
 ```json
+{
+  "bar": {
+    "layout": {
       "right": [
         {
-          "id": "system-stats"
-        },
-        ...
+          "id": "gurvindersingh-web.system-stats"
+        }
+      ]
+    }
+  }
+}
 ```
 
-The shell will automatically reload and display the widget.
+The shell will automatically reload and display the widget instantly.
 
-## Requirements
+## Requirements & Dependencies
 
-- `lm_sensors` (for temperature)
-- `power-profiles-daemon` (for power profile)
-- `btop` (opens when clicking stats)
-- `alacritty` (terminal for btop)
+To ensure all metrics display correctly, please ensure the following dependencies are installed on your system:
+
+- `lm_sensors` (required for temperature reading)
+- `power-profiles-daemon` (required for power profile management)
+- `btop` (default task manager opened when clicking stats)
+- `alacritty` (default terminal for opening `btop`)
+
+*Note: If a tool is missing (e.g. `sensors`), the widget will gracefully fallback to displaying `N/A` without breaking your bar.*
 
 ## Safety & Privacy
 
-This plugin only reads standard Linux system statistics (`/proc/stat`, `/proc/uptime`, `free`, `df`, `sensors`) and does not collect, store, or transmit any personal information.
+This plugin only executes standard, local Linux system diagnostic commands (`/proc/stat`, `/proc/uptime`, `free`, `df`, `sensors`) and does not collect, store, or transmit any personal information or telemetry over the internet.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
